@@ -13,7 +13,6 @@ No build step: the files in this folder are the site.
 | `modern-slavery.html` | Voluntary modern slavery statement |
 | `404.html` | Page shown for missing pages |
 | `site.css` | Shared styles |
-| `gant88/` | Kinetic Flow Planner, the internal Gantt task list at /gant88 (a small Node service; see `gant88/README.md`) |
 
 ## Publish on DigitalOcean App Platform
 
