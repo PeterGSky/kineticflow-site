@@ -227,3 +227,14 @@ main.doc .box h2 { margin-top: 0; }
 .foot-links a { color: var(--ink); text-decoration: none; font-size: 0.94rem; }
 .foot-links a:hover, .foot-links a[aria-current="page"] { text-decoration: underline; }
 .site-foot p { margin: 0; }
+
+/* Try a sandbox */
+.try { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; background: var(--surface); border: 2px solid var(--signal); border-radius: 20px; padding: clamp(24px, 4vw, 48px); }
+.try .lede { margin-bottom: 24px; }
+.try ul { list-style: none; margin: 0; padding: 0; }
+.try li { padding: 14px 0 14px 2rem; border-bottom: 1px solid var(--line); position: relative; }
+.try li:last-child { border-bottom: 0; }
+.try li::before { content: "✓"; position: absolute; left: 0; top: 13px; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--signal); color: var(--signal-ink); font-weight: 800; font-size: 0.8rem; display: grid; place-items: center; }
+.try li strong { display: block; }
+.try li span { color: var(--ink-soft); }
+@media (max-width: 760px) { .try { grid-template-columns: minmax(0, 1fr); } }
