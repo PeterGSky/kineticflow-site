@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kinetic Flow Planner</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<main id="login-view" class="login" hidden>
+  <form id="login-form" class="card login-card" novalidate>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="bar" x="3" y="6" width="16" height="5" rx="2.5"/><rect class="lead" x="9" y="14" width="20" height="5" rx="2.5"/><rect class="bar" x="3" y="22" width="11" height="5" rx="2.5"/></svg>
+      <span>Kinetic Flow <em>Planner</em></span>
+    </div>
+    <h1>Sign in</h1>
+    <label>Email <input name="email" type="email" autocomplete="username" required></label>
+    <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+    <p class="form-error" role="alert" hidden></p>
+    <button class="btn signal" type="submit">Sign in</button>
+  </form>
+</main>
+
+<!-- App -->
+<div id="app-view" hidden>
+  <header class="top">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="bar" x="3" y="6" width="16" height="5" rx="2.5"/><rect class="lead" x="9" y="14" width="20" height="5" rx="2.5"/><rect class="bar" x="3" y="22" width="11" height="5" rx="2.5"/></svg>
+      <span>Kinetic Flow <em>Planner</em></span>
+    </div>
+    <div class="top-right">
+      <span id="who" class="who"></span>
+      <button class="link-btn" id="team-btn" type="button">Team</button>
+      <button class="link-btn" id="password-btn" type="button">Password</button>
+      <button class="link-btn" id="logout-btn" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <section class="toolbar" aria-label="Chart controls">
+    <button class="btn signal" id="add-btn" type="button">+ Add task</button>
+    <div class="seg" role="group" aria-label="Zoom">
+      <button type="button" data-zoom="day">Days</button>
+      <button type="button" data-zoom="week">Weeks</button>
+      <button type="button" data-zoom="month">Months</button>
+    </div>
+    <button class="btn ghost" id="today-btn" type="button">Today</button>
+    <label class="filter">Owner
+      <select id="owner-filter"><option value="">Everyone</option></select>
+    </label>
+    <label class="check"><input type="checkbox" id="group-toggle" checked> Group by area</label>
+    <label class="check"><input type="checkbox" id="done-toggle" checked> Show done</label>
+    <span class="summary" id="summary" aria-live="polite"></span>
+  </section>
+
+  <section class="gantt-wrap">
+    <div class="gantt" id="gantt" role="grid" aria-label="Task timeline"></div>
+    <div class="empty" id="empty" hidden>
+      <h2>No tasks yet</h2>
+      <p>Add the first thing that needs doing, with a start and end date. Drag a bar to move it, or drag its ends to change the dates.</p>
+      <button class="btn signal" type="button" data-action="add">+ Add task</button>
+    </div>
+  </section>
+
+  <p class="legend">
+    <span><i class="sw st-not_started"></i>Not started</span>
+    <span><i class="sw st-in_progress"></i>In progress</span>
+    <span><i class="sw st-blocked"></i>Blocked</span>
+    <span><i class="sw st-done"></i>Done</span>
+    <span><i class="sw diamond"></i>Milestone</span>
+    <span><i class="sw late"></i>Overdue</span>
+  </p>
+</div>
+
+<!-- Task editor -->
+<dialog id="task-dialog">
+  <form id="task-form" method="dialog" novalidate>
+    <h2 id="task-dialog-title">Add task</h2>
+    <label class="wide">Task <input name="title" maxlength="200" required></label>
+    <div class="two">
+      <label>Area <input name="area" maxlength="80" list="area-list" placeholder="e.g. Meta, Website"></label>
+      <label>Owner <input name="owner" maxlength="80" list="owner-list"></label>
+    </div>
+    <div class="two">
+      <label>Start <input name="start_date" type="date" required></label>
+      <label>End <input name="end_date" type="date" required></label>
+    </div>
+    <label class="check"><input type="checkbox" name="is_milestone"> Milestone (a single date, shown as a diamond)</label>
+    <div class="two">
+      <label>Status
+        <select name="status">
+          <option value="not_started">Not started</option>
+          <option value="in_progress">In progress</option>
+          <option value="blocked">Blocked</option>
+          <option value="done">Done</option>
+        </select>
+      </label>
+      <label>Progress <span class="range"><input name="progress" type="range" min="0" max="100" step="5"><output name="progress_out">0%</output></span></label>
+    </div>
+    <label class="wide">Waits for <select name="depends_on"><option value="">Nothing</option></select></label>
+    <label class="wide">Notes <textarea name="notes" rows="3" maxlength="5000"></textarea></label>
+    <p class="meta" id="task-meta"></p>
+    <p class="form-error" role="alert" hidden></p>
+    <div class="actions">
+      <button class="btn danger" type="button" id="delete-task">Delete</button>
+      <span class="move">
+        <button class="btn ghost small" type="button" id="move-up" aria-label="Move up">↑</button>
+        <button class="btn ghost small" type="button" id="move-down" aria-label="Move down">↓</button>
+      </span>
+      <span class="spacer"></span>
+      <button class="btn ghost" type="button" data-close>Cancel</button>
+      <button class="btn signal" type="submit">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Change password -->
+<dialog id="password-dialog">
+  <form id="password-form" method="dialog" novalidate>
+    <h2>Change password</h2>
+    <input type="email" name="username" autocomplete="username" hidden>
+    <label class="wide">Current password <input name="current" type="password" autocomplete="current-password" required></label>
+    <label class="wide">New password <input name="next" type="password" autocomplete="new-password" minlength="10" required></label>
+    <p class="hint">At least 10 characters. Other devices will be signed out.</p>
+    <p class="form-error" role="alert" hidden></p>
+    <div class="actions"><span class="spacer"></span>
+      <button class="btn ghost" type="button" data-close>Cancel</button>
+      <button class="btn signal" type="submit">Change password</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Team -->
+<dialog id="team-dialog">
+  <form id="team-form" method="dialog" novalidate>
+    <h2>Team</h2>
+    <ul class="team-list" id="team-list"></ul>
+    <h3>Add someone</h3>
+    <div class="two">
+      <label>Name <input name="name" maxlength="100"></label>
+      <label>Email <input name="email" type="email" required></label>
+    </div>
+    <label class="wide">Temporary password <input name="password" type="text" minlength="10" autocomplete="off" required></label>
+    <p class="hint">Give it to them privately and ask them to change it after signing in.</p>
+    <p class="form-error" role="alert" hidden></p>
+    <div class="actions"><span class="spacer"></span>
+      <button class="btn ghost" type="button" data-close>Close</button>
+      <button class="btn signal" type="submit">Add person</button>
+    </div>
+  </form>
+</dialog>
+
+<datalist id="area-list"></datalist>
+<datalist id="owner-list"></datalist>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
