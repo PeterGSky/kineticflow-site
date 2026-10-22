@@ -231,6 +231,7 @@ main.doc .box h2 { margin-top: 0; }
 /* Try a sandbox */
 .try { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; background: var(--surface); border: 2px solid var(--signal); border-radius: 20px; padding: clamp(24px, 4vw, 48px); }
 .try .lede { margin-bottom: 24px; }
+.try-pick { display: flex; flex-wrap: wrap; gap: 10px; }
 .try ul { list-style: none; margin: 0; padding: 0; }
 .try li { padding: 14px 0 14px 2rem; border-bottom: 1px solid var(--line); position: relative; }
 .try li:last-child { border-bottom: 0; }
