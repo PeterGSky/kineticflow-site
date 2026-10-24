@@ -1,0 +1,20 @@
+# Kinetic Flow
+
+> Kinetic Flow Limited builds sales, recruitment and customer software for UK businesses. It is a UK company (number 17526373), registered with the ICO (ZC277693), with its software hosted in London. Its full company website is coming soon.
+
+## Products
+
+- [KineticFlow Lite](https://lite.kineticflow.systems/): a leads manager for UK teams who sell by phone, WhatsApp and email. Every lead's calls, chats, emails and follow-ups on one screen, with AI summaries and a UK number from day one. Free for one user.
+- [FullRota](https://fullrota.com/): a recruitment CRM for UK staffing agencies in any specialism, with WhatsApp built in. Shift broadcasts, weekly availability checks, compliance chasing and a shared inbox, with no app for candidates to download.
+
+## Contact
+
+- Email: hello@kineticflow.systems
+- [Contact page](https://lite.kineticflow.systems/contact.html)
+
+## Company
+
+- Kinetic Flow Limited, registered in England and Wales, company number 17526373.
+- Registered office: 3 Gainsborough Court, Skipton, England, BD23 1QG.
+- ICO registration ZC277693. Member of the Microsoft AI Cloud Partner Program.
+- [Privacy policy](https://lite.kineticflow.systems/privacy.html) · [Terms](https://lite.kineticflow.systems/terms.html) · [Modern slavery statement](https://lite.kineticflow.systems/modern-slavery.html)

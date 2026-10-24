@@ -2,6 +2,10 @@
 
 Plain-English list of changes to the Kinetic Flow websites (lite.kineticflow.systems from the root folder, kineticflow.systems from `coming-soon/`), newest first. Versions are major.minor.patch.
 
+## 1.1.0 (24 Oct 2026)
+
+- **Added:** `llms.txt` on both sites, plain-text summaries written for AI assistants such as ChatGPT and Claude: one for KineticFlow Lite (lite.kineticflow.systems) and one for the company (kineticflow.systems). They only repeat what the websites already say.
+
 ## 1.0.0 (24 Oct 2026)
 
 First numbered version.
