@@ -1,0 +1,52 @@
+# KineticFlow Lite
+
+> KineticFlow Lite is a leads manager (a simple CRM) for UK teams who sell by phone, WhatsApp and email. Every call, chat, email and follow-up for a lead sits on one screen, AI summaries pull out what was agreed and what's still open, and a UK number is ready the day you start. Free for one user. It is made by Kinetic Flow Limited, a UK company (number 17526373), registered with the ICO (ZC277693), hosted in London, and a Microsoft verified publisher.
+
+## What it does
+
+- Leads inbox: web forms, Facebook lead ads and spreadsheets land in one inbox, with duplicates spotted before they reach the team.
+- Shared WhatsApp: every rep replies from the same business number, and every chat stays on the lead, not on someone's phone.
+- Calls from the browser on a UK number or over WhatsApp, with one-tap outcomes.
+- Calendar of calls, follow-ups and demos, for one person or the whole team.
+- AI summaries: long email and WhatsApp threads become a few lines covering what the lead wants, what was agreed, what's still open and the next step, with every action point pulled out and ready to add to the calendar. Summaries are written using Claude, an AI model from Anthropic, are labelled as AI-written and can be edited. Customer data is not used to train AI models.
+- Gmail and Outlook (email add-on): emails to and from each lead appear on its timeline, with replies sent from KineticFlow.
+- Reports on who moved which leads, where the best leads come from and where deals drop out.
+- Roles and permissions, automatic lead assignment, and lead transfers between reps with a manager's approval.
+- Won leads move to customer records with their whole history.
+- Website lead API: a ready-made form or an API key sends enquiries from your own website into the Leads inbox.
+- TPS and Corporate TPS checks before cold calls, with "do not call" respected for good.
+
+## Try it
+
+- A sandbox with sample data (a sales team or a recruitment agency), yours for 2 hours, with no card or sign-up: [Try it](https://app.kineticflow.systems/try)
+
+## Pricing (no VAT charged)
+
+- Free: £0 for ever, 1 user, 500 leads, pipeline, calendar, WhatsApp inbox and AI summaries.
+- Starter: £12 per user a month, or £10 paid yearly, up to 5 users, unlimited leads, a UK number included, 100 WhatsApp messages you start each month.
+- Team: £20 per user a month, or £17 paid yearly, unlimited users, 250 WhatsApp messages you start per user each month, campaigns, roles, transfers, full reports, website lead capture and webhooks.
+- Add-ons: email £3 per mailbox a month; extra UK number £3 a month.
+- Paid plans start with a one-month free trial. Cancel at any time and export everything to one Excel file.
+
+## Data
+
+- Hosted in London, under UK GDPR, with a data processing agreement on every account.
+- WhatsApp is a trademark of Meta Platforms. KineticFlow is an independent product and is not affiliated with Meta.
+
+## Pages
+
+- [Home, features, pricing and FAQ](https://lite.kineticflow.systems/)
+- [Start free](https://app.kineticflow.systems/signup?plan=free)
+- [Log in](https://app.kineticflow.systems/login)
+- [Contact](https://lite.kineticflow.systems/contact.html)
+- [Privacy policy](https://lite.kineticflow.systems/privacy.html)
+- [Terms](https://lite.kineticflow.systems/terms.html)
+- [Deleting your data](https://lite.kineticflow.systems/data-deletion.html)
+- [Modern slavery statement](https://lite.kineticflow.systems/modern-slavery.html)
+
+## Company
+
+- Kinetic Flow Limited, registered in England and Wales, company number 17526373.
+- Registered office: 3 Gainsborough Court, Skipton, England, BD23 1QG.
+- ICO registration ZC277693. Microsoft verified publisher. Member of the Microsoft AI Cloud Partner Program.
+- Company site: [kineticflow.systems](https://kineticflow.systems/). Sister product: [FullRota](https://fullrota.com/), a recruitment CRM for staffing agencies with WhatsApp built in.
